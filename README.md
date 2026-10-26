@@ -49,11 +49,11 @@ To enable delivery:
 | `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Public Cloudflare Turnstile widget key. |
 | `TURNSTILE_SECRET_KEY` | Private Turnstile verification key. |
 | `RESEND_API_KEY` | Private Resend API key. |
-| `CONTACT_TO_EMAIL` | Business inbox that receives inquiries. |
+| `CONTACT_TO_EMAIL` | Business inbox that receives inquiries. `.env.example` uses the non-deliverable `website-inquiries@example.com` placeholder; replace it with a real inbox before enabling delivery. |
 | `CONTACT_FROM_EMAIL` | Sender address on the verified Resend domain. |
 | `PUBLISHED_PRIVACY_NOTICE_URL` | Absolute HTTPS URL of the final approved privacy notice, recorded in the delivered email. It must match `NEXT_PUBLIC_PRIVACY_NOTICE_URL`. |
 
-The application does not use a database for inquiry submissions. When configured, the message is sent to the business inbox through Resend; that provider processes the email. Do not enable delivery until the final privacy notice and provider configuration are in place. The forms warn visitors not to submit confidential protocols or patient-identifiable information, and they do not provide file uploads.
+The application does not use a database for inquiry submissions. When configured, the message is sent to the business inbox through Resend; that provider processes the email. The example recipient is intentionally not a real inbox, and form delivery stays disabled until it is replaced with a real address and all other provider, spam-protection, and privacy requirements are met. Do not enable delivery until the final privacy notice and provider configuration are in place. The forms warn visitors not to submit confidential protocols or patient-identifiable information, and they do not provide file uploads.
 
 ## Pages and content
 

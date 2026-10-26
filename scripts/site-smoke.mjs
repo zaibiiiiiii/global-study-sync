@@ -61,7 +61,10 @@ try {
     assert.equal(await page.locator('link[rel="canonical"]').getAttribute("href"), path === "/" ? baseUrl : new URL(path, baseUrl).toString(), `${path} should define its canonical URL`);
 
     const photos = page.locator("main figure img");
-    assert.ok(await photos.count() > 0, `${path} should contain relevant editorial photography`);
+    const hasVisual = path === "/contact"
+      ? await page.locator('iframe[title*="Google Maps"]').count() > 0
+      : await photos.count() > 0;
+    assert.ok(hasVisual, `${path} should contain a relevant visual`);
     for (let index = 0; index < await photos.count(); index += 1) {
       const photo = photos.nth(index);
       const alt = await photo.getAttribute("alt");
@@ -81,6 +84,14 @@ try {
       assert.equal(new URL(page.url()).hash, "#feasibility", "the service index should jump to the selected service");
       assert.ok(await page.locator("#feasibility h2").isVisible(), "the selected service heading should remain visible after the jump");
       await page.evaluate(() => window.scrollTo(0, 0));
+    }
+
+    if (path === "/contact") {
+      const map = page.getByTitle("Google Maps preview of Boston, Massachusetts, an illustrative location only");
+      assert.equal(await map.count(), 1, "the contact page should show one clearly labeled illustrative Google Map");
+      assert.match(await map.getAttribute("src"), /maps\.google\.com\/maps\?.*output=embed/, "the contact map should use a Google Maps embed");
+      assert.ok(await page.getByText(/Google Maps preview; the location is illustrative only\./).count(), "the map should not imply a real office location");
+      assert.ok(await page.getByRole("link", { name: "Start an inquiry" }).count(), "the contact page should offer a prominent link to the form");
     }
 
     if (path === "/") {

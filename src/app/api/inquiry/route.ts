@@ -120,7 +120,7 @@ export async function POST(request: Request) {
 
   const enabled = process.env.INQUIRY_DELIVERY_ENABLED === "true";
   const apiKey = process.env.RESEND_API_KEY;
-  const recipient = process.env.CONTACT_TO_EMAIL;
+  const recipient = process.env.CONTACT_TO_EMAIL?.trim();
   const sender = process.env.CONTACT_FROM_EMAIL;
   const turnstileSecret = process.env.TURNSTILE_SECRET_KEY;
   const privacyNotice = process.env.PUBLISHED_PRIVACY_NOTICE_URL?.trim();
