@@ -13,8 +13,8 @@ export function BrandMark({ className = "" }: { className?: string }) {
 export default function Brand({ light = false }: { light?: boolean }) {
   return (
     <Link href="/" aria-label="Global Study Sync home" className={`group inline-flex items-center gap-2.5 ${light ? "text-ivory" : "text-forest"}`}>
-      <BrandMark className="h-10 w-10 shrink-0 transition-transform duration-300 group-hover:-rotate-6" />
-      <span className="font-semibold tracking-[-.045em] text-[17px] leading-none sm:text-[18px]">
+      <BrandMark className="h-11 w-11 shrink-0 transition-transform duration-300 group-hover:-rotate-6" />
+      <span className="font-semibold tracking-[-.045em] text-[18px] leading-none sm:text-[19px]">
         global study <span className="font-normal">sync</span>
       </span>
     </Link>
