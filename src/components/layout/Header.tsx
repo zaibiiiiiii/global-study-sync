@@ -9,8 +9,8 @@ import Brand from "@/components/layout/Brand";
 const links = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
-  { label: "For Sponsors & CROs", href: "/for-sponsors" },
   { label: "For Sites", href: "/for-sites" },
+  { label: "For Sponsors & CROs", href: "/for-sponsors" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];

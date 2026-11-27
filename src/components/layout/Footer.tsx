@@ -14,7 +14,7 @@ export default function Footer() {
           <div>
             <Brand light />
             <p className="mt-5 max-w-sm text-sm leading-7 text-ivory/75">
-              Independent site-sourcing, feasibility coordination, and business development support for clinical research.
+              Connecting clinical research sites with global sponsors and CROs through transparent partnerships and aligned trial opportunities.
             </p>
           </div>
           <div>
@@ -33,7 +33,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="grid gap-6 pt-7 text-xs leading-6 text-ivory/75 md:grid-cols-[1fr_auto] md:items-end">
-          <p className="max-w-4xl">Global Study Sync provides site-sourcing, feasibility coordination, and business development support. Final site selection, qualification, regulatory determinations, and study conduct remain the responsibility of the relevant sponsor, CRO, investigator, or research organization, as applicable.</p>
+          <p className="max-w-4xl">Global Study Sync operates as an independent clinical research network connecting research sites with aligned study opportunities and global trial partners. Final site selection, qualification, regulatory determinations, and study conduct remain the responsibility of the relevant sponsor, CRO, investigator, or research organization, as applicable.</p>
           <p className="whitespace-nowrap">© {new Date().getFullYear()} Global Study Sync</p>
         </div>
       </div>

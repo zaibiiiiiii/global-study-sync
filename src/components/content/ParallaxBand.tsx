@@ -46,11 +46,18 @@ export default function ParallaxBand() {
 
         const controls = animate(
           card,
-          { opacity: [0, 1], y: [24, 0] },
+          { opacity: [0, 1], y: [16, 0] },
           { duration: 0.65, delay: index * 0.07, ease: [0.22, 0.61, 0.36, 1] },
         );
 
-        return () => controls.stop();
+        // When the card leaves the viewport mid-reveal, snap it to the final
+        // visible state instead of freezing it at the current (possibly
+        // still-invisible) frame. `played` already prevents a replay.
+        return () => {
+          controls.stop();
+          card.style.opacity = "1";
+          card.style.transform = "none";
+        };
       }, { amount: 0.18 });
     });
 

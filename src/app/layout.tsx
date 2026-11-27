@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import ScrollTextMotion from "@/components/content/ScrollTextMotion";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "500", "600", "700"], variable: "--font-inter-family", display: "swap" });
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000").replace(/\/+$/, "");
@@ -44,6 +45,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <ScrollTextMotion />
         <main id="main-content">{children}</main>
         <Footer />
+        <ChatWidget />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       </body>
     </html>

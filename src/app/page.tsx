@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import DiagramIcon from "@/components/content/DiagramIcon";
-import EditorialImage from "@/components/content/EditorialImage";
 import HeroVideo from "@/components/content/HeroVideo";
 import ParallaxBand from "@/components/content/ParallaxBand";
 import SectionTitle from "@/components/content/SectionTitle";
@@ -44,17 +43,6 @@ export default function Home() {
         </Link>
       </section>
 
-      <section className="border-y border-forest/10 bg-sage/30 py-16 sm:py-20 lg:py-24">
-        <div className="mx-auto grid max-w-[1280px] gap-8 px-5 sm:px-8 lg:grid-cols-[.78fr_1.02fr_1fr] lg:items-center lg:gap-10 lg:px-10">
-          <SectionTitle eyebrow="A considered approach" title="Better Connections. More Focused Site Identification." />
-          <div className="max-w-2xl text-[15px] leading-8 text-charcoal/75">
-            <p>Finding suitable clinical research sites requires more than a list of locations. It requires understanding study requirements, investigator capabilities, patient populations, operational considerations, and site interest.</p>
-            <p className="mt-5">Global Study Sync focuses on structured site identification, practical feasibility coordination, and professional communication to help move study opportunities toward the right conversations.</p>
-          </div>
-          <EditorialImage src="/images/editorial/research-workspace.webp" alt="A healthcare professional reviewing work at a laptop." />
-        </div>
-      </section>
-
       <section className="py-16 sm:py-20 lg:py-24" id="services">
         <div className="mx-auto max-w-[1280px] px-5 sm:px-8 lg:px-10">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
@@ -64,7 +52,7 @@ export default function Home() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             {services.map((service, index) => <Link href="/services" key={service.title} className="group flex h-full min-h-[220px] rounded-2xl border border-forest/10 bg-white/75 p-5 shadow-sm transition duration-200 hover:-translate-y-1 hover:bg-white hover:shadow-lg sm:p-7">
               <div className="flex items-start justify-between gap-5">
-                <div><span className="text-xs font-medium tracking-[.12em] text-forest/70">0{index + 1}</span><div className="mt-3 flex items-center gap-3"><span className="flex h-12 w-16 shrink-0 items-center justify-center rounded-xl border border-forest/10 bg-sage/40 p-1"><DiagramIcon kind={service.diagram} className="h-full w-full" /></span><h3 className="text-xl font-semibold text-forest transition-colors group-hover:text-charcoal">{service.title}</h3></div><p className="mt-3 max-w-lg text-sm leading-7 text-charcoal/70">{service.text}</p></div>
+                <div><span className="text-xs font-medium tracking-[.12em] text-forest/70">0{index + 1}</span><div className="mt-3 flex items-start gap-3"><span className="flex h-12 w-16 shrink-0 items-center justify-center rounded-xl border border-forest/10 bg-sage/40 p-1"><DiagramIcon kind={service.diagram} className="h-full w-full" /></span><h3 className="flex min-h-12 flex-col justify-center text-xl font-semibold text-forest transition-colors group-hover:text-charcoal">{service.title}</h3></div><p className="mt-3 max-w-lg text-sm leading-7 text-charcoal/70">{service.text}</p></div>
                 <ArrowRight size={18} className="mt-1 shrink-0 text-forest transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </div>
             </Link>)}

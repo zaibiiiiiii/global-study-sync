@@ -40,11 +40,15 @@ export default function ScrollTextMotion() {
 
         const controls = animate(
           element,
-          { opacity: [0.72, 1], y: [22, 0] },
+          { opacity: [0.72, 1] },
           { duration: 0.68, ease: [0.22, 0.61, 0.36, 1] },
         );
 
-        return () => controls.stop();
+        return () => {
+          controls.stop();
+          element.style.opacity = "1";
+          element.style.transform = "none";
+        };
       }, { amount: 0.2 });
 
       stops.set(heading, stop);
