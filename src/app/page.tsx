@@ -14,10 +14,10 @@ export const metadata: Metadata = {
 };
 
 const services = [
-  { title: "Site Sourcing & Identification", text: "Identify potential sites and investigators against protocol requirements, capabilities, experience, geography, and relevant feasibility factors.", diagram: "sites" },
-  { title: "Feasibility Coordination", text: "Organize preliminary site information, coordinate feasibility requests, and collect relevant operational and investigator details for review.", diagram: "feasibility" },
-  { title: "Investigator & Site Network Development", text: "Build professional relationships with investigators and research organizations to support relevant future study opportunities.", diagram: "network" },
-  { title: "Clinical Research Business Development", text: "Support professional introductions and communication between sponsors, CROs, and sites where there is a relevant fit.", diagram: "connections" },
+  { title: "Study Opportunity Matching", text: "We look for studies that fit your site’s therapeutic areas, investigators, patient access and capacity, so you only hear about relevant opportunities.", diagram: "study" },
+  { title: "Sponsor & CRO Introductions", text: "We introduce your site to the right sponsors and CROs, with a clear and accurate profile of your capabilities.", diagram: "connections" },
+  { title: "Feasibility Coordination", text: "We help you prepare for and respond to feasibility requests, and keep the information organized so the process moves faster.", diagram: "feasibility" },
+  { title: "Ongoing Relationship Building", text: "We keep in touch with sponsors, CROs and sites over time, so the right opportunities reach you as they come up.", diagram: "network" },
 ] as const;
 
 export default function Home() {

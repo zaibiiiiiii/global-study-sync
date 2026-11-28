@@ -8,33 +8,27 @@ import SectionTitle from "@/components/content/SectionTitle";
 import ServiceNav from "@/components/content/ServiceNav";
 
 export const metadata: Metadata = {
-  title: "Clinical Research Site Sourcing & Feasibility Services",
-  description: "Explore clinical trial site sourcing, preliminary feasibility coordination, investigator and site network development, and business development support.",
+  title: "Clinical Research Feasibility & Site Network Services",
+  description: "Explore feasibility coordination, investigator and site network development, and business development support for clinical research.",
   alternates: { canonical: "/services" },
-  openGraph: { title: "Clinical Research Site Sourcing & Feasibility Services", description: "Explore preliminary site identification, feasibility coordination, site relationship development, and professional introductions.", url: "/services", images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Global Study Sync — connecting clinical research with suitable sites" }] },
+  openGraph: { title: "Clinical Research Feasibility & Site Network Services", description: "Explore feasibility coordination, site relationship development, and professional introductions.", url: "/services", images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Global Study Sync — connecting clinical research with suitable sites" }] },
 };
 
 const offerings = [
   {
-    id: "site-sourcing", index: "01", title: "Clinical Trial Site Sourcing", summary: "A focused preliminary view of sites and investigators to consider against a study’s requirements.",
-    diagram: "sites",
-    image: "/images/editorial/research-collaboration.webp", imageAlt: "Two researchers discussing their work beside a microscope.",
-    items: ["Preliminary site identification based on study requirements", "Investigator and site capability mapping", "Geographic and therapeutic-area alignment", "Review of available public and voluntarily supplied site information", "Preliminary longlisting for sponsor or CRO consideration"],
-  },
-  {
-    id: "feasibility", index: "02", title: "Feasibility Coordination", summary: "Practical coordination that helps organize early site input for sponsor or CRO review.",
+    id: "feasibility", index: "01", title: "Feasibility Coordination", summary: "Practical coordination that helps organize early site input for sponsor or CRO review.",
     diagram: "feasibility",
     image: "/images/editorial/feasibility-review.webp", imageAlt: "Professionals discussing notes and working together around a laptop.",
     items: ["Coordination of feasibility questionnaires", "Collection of relevant investigator and site profiles", "Organization of site capability information", "Follow-up coordination with prospective sites", "Consolidation of preliminary feasibility information"],
   },
   {
-    id: "network-development", index: "03", title: "Site and Investigator Network Development", summary: "Relationship development that keeps site interests and capabilities in view for relevant future opportunities.",
+    id: "network-development", index: "02", title: "Site and Investigator Network Development", summary: "Relationship development that keeps site interests and capabilities in view for relevant future opportunities.",
     diagram: "network",
     image: "/images/editorial/site-capabilities.webp", imageAlt: "Two researchers working together at a microscope.",
     items: ["Relationship development with clinical research sites", "Maintenance of an organized database of site capabilities and contact preferences voluntarily shared by sites", "Identification of investigators interested in relevant future opportunities", "Therapeutic-area and geographic mapping"],
   },
   {
-    id: "introductions", index: "04", title: "Business Development and Introductions", summary: "Professional outreach and introductions where a potential study and site fit merits a closer conversation.",
+    id: "introductions", index: "03", title: "Business Development and Introductions", summary: "Professional outreach and introductions where a potential study and site fit merits a closer conversation.",
     diagram: "connections",
     image: "/images/editorial/research-workspace.webp", imageAlt: "A healthcare professional reviewing work at a laptop.",
     items: ["Identification of relevant study opportunities", "Initial outreach and relationship coordination", "Introduction of potentially suitable sites to sponsors and CROs", "Follow-up coordination during preliminary discussions"],

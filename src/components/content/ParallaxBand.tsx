@@ -1,7 +1,3 @@
-"use client";
-
-import { animate, inView } from "motion/react";
-import { useEffect, useState } from "react";
 import DiagramIcon from "@/components/content/DiagramIcon";
 import IntroductionFlowDiagram from "@/components/content/IntroductionFlowDiagram";
 import SectionTitle from "@/components/content/SectionTitle";
@@ -14,56 +10,6 @@ const steps = [
 ] as const;
 
 export default function ParallaxBand() {
-  const [reduceMotion, setReduceMotion] = useState<boolean | null>(null);
-
-  useEffect(() => {
-    const preference = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const syncPreference = () => setReduceMotion(preference.matches);
-    syncPreference();
-    preference.addEventListener("change", syncPreference);
-    return () => preference.removeEventListener("change", syncPreference);
-  }, []);
-
-  useEffect(() => {
-    const cards = Array.from(document.querySelectorAll<HTMLElement>("#how-it-works [data-parallax-card]"));
-
-    if (reduceMotion !== false) {
-      cards.forEach((card) => {
-        card.dataset.scrollReveal = "reduced";
-        card.style.removeProperty("opacity");
-        card.style.removeProperty("transform");
-      });
-      return;
-    }
-
-    const played = new WeakSet<Element>();
-    const stops = cards.map((card, index) => {
-      card.dataset.scrollReveal = "pending";
-      return inView(card, () => {
-        if (played.has(card)) return;
-        played.add(card);
-        card.dataset.scrollReveal = "revealed";
-
-        const controls = animate(
-          card,
-          { opacity: [0, 1], y: [16, 0] },
-          { duration: 0.65, delay: index * 0.07, ease: [0.22, 0.61, 0.36, 1] },
-        );
-
-        // When the card leaves the viewport mid-reveal, snap it to the final
-        // visible state instead of freezing it at the current (possibly
-        // still-invisible) frame. `played` already prevents a replay.
-        return () => {
-          controls.stop();
-          card.style.opacity = "1";
-          card.style.transform = "none";
-        };
-      }, { amount: 0.18 });
-    });
-
-    return () => stops.forEach((stop) => stop());
-  }, [reduceMotion]);
-
   return (
     <section
       className="relative isolate overflow-hidden bg-forest bg-[url('/images/editorial/feasibility-review.webp')] bg-cover bg-center bg-fixed py-16 text-ivory sm:py-20 lg:py-24"
@@ -81,7 +27,6 @@ export default function ParallaxBand() {
             {steps.map(({ title, text, diagram }, index) => (
               <article
                 key={title}
-                data-parallax-card
                 className="rounded-2xl border border-white/20 bg-forest/95 p-5 shadow-[0_16px_48px_rgba(0,0,0,0.24)] backdrop-blur-md sm:p-7"
               >
                 <div className="flex items-center justify-between">
